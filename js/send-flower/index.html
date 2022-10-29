@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> 代码设计模式之代理模式</h1>
+    <script>
+        //?邹宇
+        //document.write('邹宇')
+        //对象字面量 描述功能 表现力 
+        let zy={
+            name:'邹宇',
+            age:21,
+            hometown:'上饶',
+            isSingle:false,
+            //形参
+            sendFlower(o){
+                o.receiveFlower(this)
+            }
+        }
+        let hhy={
+            name:'小黄',
+            age:18,
+            hometown:'上饶',
+            room:'201',
+            receiveFlower(o){
+               
+             console.log(`${this.name}收到了${o.name}送到花`)
+                     if(this.xq>=90){
+                        console.log('万达走一波')
+                     }else{
+                        console.log('洗脚水准备好了.....')
+                     }
+            }
+        }
+        //代理模式：通过小红送花
+        let xh={
+            xq:50,
+            name:'小红',
+            room:'201',
+            hometown:'上饶',
+            //接口  当不同的对象，具有相同的方法时，可以互换使用
+            receiveFlower(o){
+            //  if(o.name==='邹宇'){
+            //       console.log('让我们在一起吧')
+            //     }else{
+            //          xm.receiveFlower(o)
+            //     }
+        
+            setTimeout(function () { 
+                hhy.qx=95;
+                hhy.receiveFlower(o)
+                
+            },10000)
+        } 
+     }
+        zy.sendFlower(xh)  
+    </script>
+</body>
+</html>
