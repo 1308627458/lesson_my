@@ -1,0 +1,12 @@
+
+{
+  
+  "pages": [
+   "pages/detail/index",
+   "page/index/index",
+   "page/logs/logs"
+ ],
+
+  "usingComponents": {},
+  "navigationBarTitleText": "首页"
+}
